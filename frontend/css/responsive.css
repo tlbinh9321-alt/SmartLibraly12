@@ -1,0 +1,51 @@
+/* Responsive behaviour: desktop (sidebar) -> tablet (icon rail) -> mobile (drawer + card tables) */
+@media (max-width: 1280px) {
+  .grid.stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid.hero, .grid.three { grid-template-columns: minmax(0, 1fr); }
+  .grid.three.keep { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1024px) and (min-width: 769px) {
+  .app { grid-template-columns: 78px minmax(0, 1fr); }
+  .sidebar { padding: 18px 10px; align-items: center; }
+  .brand { padding: 4px 0 20px; } .brand-text, .nav a span.label, .foot-note, .status-pill .status-text { display: none; }
+  .nav a { justify-content: center; padding: 12px; } .status-pill { padding: 8px; }
+  .view { padding: 22px 20px 50px; } .topbar { padding: 12px 20px; }
+}
+@media (max-width: 900px) { .grid.two { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 768px) {
+  body { font-size: 15px; }
+  .app { display: block; }
+  .menu-btn { display: inline-grid; width: 42px; height: 42px; }
+  .sidebar { position: fixed; z-index: 60; left: 0; top: 0; bottom: 0; width: min(290px, 84vw); transform: translateX(-102%); transition: transform .28s var(--ease); box-shadow: var(--shadow-lg); overflow-y: auto; }
+  .app.drawer-open .sidebar { transform: none; }
+  .scrim { display: block; position: fixed; inset: 0; z-index: 50; background: rgba(5,11,28,.5); opacity: 0; pointer-events: none; transition: opacity .25s; }
+  .app.drawer-open .scrim { opacity: 1; pointer-events: auto; }
+  .topbar { padding: 10px 14px; gap: 10px; } .topbar h1 { font-size: 18px; } .crumb { display: none; }
+  .topbar-actions #topSave { display: none; }
+  .view { padding: 16px 14px 48px; } .banner { margin: 12px 14px 0; }
+  .page-head h2 { font-size: 21px; } .page-head .spacer { margin-left: 0; width: 100%; } .page-head .spacer .btn { flex: 1; }
+  .grid.stats { gap: 12px; } .stat { padding: 14px; } .stat .value { font-size: 24px; }
+  .filters { padding: 14px 14px 2px; } .filters select.input { flex: 1 1 130px; } .search-box { flex-basis: 100%; }
+  .btn { min-height: 44px; } .btn-sm { min-height: 40px; } .icon-btn { width: 42px; height: 42px; }
+  .card-head { padding: 16px 16px 0; flex-wrap: wrap; } .card-pad { padding: 16px; } .facts { padding: 6px 16px 18px; }
+  .donut-wrap { padding: 16px; justify-content: center; } .bars { padding: 8px 12px 0; gap: 3px; } .bar-lbl { font-size: 9px; }
+  .form-grid { grid-template-columns: minmax(0, 1fr); } .kv { grid-template-columns: 1fr; gap: 2px; padding: 6px 0; }
+  .modal-backdrop { align-items: end; padding: 0; } .modal, .modal.wide, .modal.narrow { max-width: none; border-radius: 22px 22px 0 0; max-height: 92vh; }
+  .modal-foot .btn { flex: 1; } .toasts { right: 10px; left: 10px; bottom: 10px; width: auto; }
+  /* tables become stacked cards */
+  .table-wrap { overflow: visible; }
+  table.rt, table.rt tbody, table.rt tr, table.rt td { display: block; width: 100%; }
+  table.rt thead { display: none; }
+  table.rt tbody { padding: 12px 14px 4px; }
+  table.rt tr { border: 1px solid var(--line); border-radius: 14px; padding: 8px 14px; margin-bottom: 12px; background: #fff; }
+  table.rt tbody tr:hover { background: #fff; }
+  table.rt td { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 8px 0; border-bottom: 1px dashed #e7ecf6; text-align: right; }
+  table.rt td::before { content: attr(data-label); color: var(--muted); font-size: 11.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; text-align: left; flex: none; }
+  table.rt td:last-child { border-bottom: 0; } table.rt td.actions { justify-content: flex-end; flex-wrap: wrap; }
+  table.rt td.actions::before { display: none; } table.rt td.cell-main { font-size: 16px; }
+  .result-grid { grid-template-columns: minmax(0, 1fr); }
+  .search-hero { padding: 16px; } .search-hero .input { min-height: 52px; font-size: 16px; }
+  .q-item .when { display: none; }
+}
+@media (max-width: 420px) { .grid.stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .stat .value { font-size: 21px; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
