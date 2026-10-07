@@ -1,0 +1,17 @@
+build/
+build-*/
+cmake-build-*/
+out/
+*.o
+*.obj
+*.exe
+.vs/
+.vscode/
+.idea/
+CMakeCache.txt
+CMakeFiles/
+# runtime data and generated reports (recreated on first run)
+backend/data/*
+backend/reports/*
+!backend/data/.gitkeep
+!backend/reports/.gitkeep
