@@ -1,0 +1,4 @@
+[
+  { "id": "SV001", "name": "Nguyễn Văn A", "type": "StudentMember", "activeLoans": 1 },
+  { "id": "GV001", "name": "Trần Thị B", "type": "FacultyMember", "activeLoans": 0 }
+]
