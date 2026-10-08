@@ -1,0 +1,5 @@
+[
+  { "id": 1, "title": "Clean Architecture", "type": "Book", "author": "Robert C. Martin", "available": true },
+  { "id": 2, "title": "The C++ Programming Language", "type": "Book", "author": "Bjarne Stroustrup", "available": false },
+  { "id": 3, "title": "IEEE Software", "type": "Journal", "volume": "Vol 40", "available": true }
+]
